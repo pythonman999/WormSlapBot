@@ -69,7 +69,8 @@ async def process() -> None:
 
     logger.info(f"Detected {len(get_session_names())} sessions | {len(get_proxies())} proxies")
 
-    action = parser.parse_args().action
+    # action = parser.parse_args().action
+    action = 2
 
     if not action:
         print(start_text)

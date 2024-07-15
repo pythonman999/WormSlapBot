@@ -10,6 +10,9 @@ from better_proxy import Proxy
 from pyrogram import Client
 from pyrogram.errors import Unauthorized, UserDeactivated, AuthKeyUnregistered
 from pyrogram.raw.functions.messages import RequestWebView
+from pyrogram.raw.functions.messages import RequestAppWebView
+from pyrogram.raw.types import InputBotAppShortName, InputBotAppID
+from pyrogram import raw
 
 from bot.config import settings
 from bot.utils import logger
@@ -45,12 +48,25 @@ class Slapper:
                 except (Unauthorized, UserDeactivated, AuthKeyUnregistered):
                     raise InvalidSession(self.session_name)
 
-            web_view = await self.tg_client.invoke(RequestWebView(
-                peer=await self.tg_client.resolve_peer('wormfare_slap_bot'),
-                bot=await self.tg_client.resolve_peer('wormfare_slap_bot'),
+            # web_view = await self.tg_client.invoke(RequestWebView(
+            #     peer=await self.tg_client.resolve_peer('wormfare_slap_bot'),
+            #     bot=await self.tg_client.resolve_peer('wormfare_slap_bot'),
+            #     platform='android',
+            #     from_bot_menu=False,
+            #     url='https://www.clicker.wormfare.com/'
+            # ))
+
+            ref_id = 'ref_2067760378'
+            peer = await self.tg_client.resolve_peer('wormfare_slap_bot')
+            # access_hash = peer.access_hash
+            # print(peer)
+
+            web_view = await self.tg_client.invoke(RequestAppWebView(
+                peer=peer,
+                app=InputBotAppShortName(bot_id=peer, short_name='start'),
                 platform='android',
-                from_bot_menu=False,
-                url='https://www.clicker.wormfare.com/'
+                write_allowed=True,
+                start_param=ref_id
             ))
 
             auth_url = web_view.url

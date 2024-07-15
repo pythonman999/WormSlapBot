@@ -25,7 +25,7 @@ class Settings(BaseSettings):
     RANDOM_SLAPS_COUNT: list[int] = [50, 200]
     SLEEP_BETWEEN_SLAP: list[int] = [20, 30]
 
-    USE_PROXY_FROM_FILE: bool = False
+    USE_PROXY_FROM_FILE: bool = True
 
 
 settings = Settings()

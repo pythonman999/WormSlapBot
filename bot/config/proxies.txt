@@ -1,5 +1,7 @@
-type://user:pass@ip:port
-type://user:pass:ip:port
-type://ip:port:user:pass
-type://ip:port@user:pass
-type://ip:port
+http://V6sYhBcD:2kPcPDwr@195.209.145.115:64044
+http://V6sYhBcD:2kPcPDwr@194.93.1.148:62836
+http://V6sYhBcD:2kPcPDwr@194.50.73.79:62662
+http://V6sYhBcD:2kPcPDwr@46.150.251.69:63818
+http://V6sYhBcD:2kPcPDwr@194.226.5.245:62802
+http://V6sYhBcD:2kPcPDwr@154.212.28.2:64308
+http://V6sYhBcD:2kPcPDwr@154.212.29.156:64056
